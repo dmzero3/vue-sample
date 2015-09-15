@@ -1,0 +1,9 @@
+node_modules
+dist
+app/**/*.html
+app/styles/*.css
+app/scripts/*.js
+.tmp
+.sass-cache
+bower_components
+test/bower_components
