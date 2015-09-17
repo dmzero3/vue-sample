@@ -3,7 +3,8 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({pattern: ['gulp-*', 'gulp.*']});
 var mainBowerFiles = require('main-bower-files');
-var runSequence = require('run')
+var runSequence = require('run-sequence');
+
 var config = require('../_config.json');
 
 gulp.task('jade', function(){
@@ -13,11 +14,12 @@ gulp.task('jade', function(){
 });
 
 gulp.task('inject', function(){
-  return gulp.src(config.path.src + '/**/*.html')
+
+  return gulp.src(config.path.dist + '/**/*.html')
     .pipe($.inject(gulp.src(mainBowerFiles(), {read: false}), {relative: true}))
     .pipe(gulp.dest(config.path.dist));
 });
 
- gulp.task('jade-inject', function(cb){
-   runSequence('jade', 'inject', cb);
- })
+gulp.task('jade-inject', function(cb){
+  runSequence('jade', 'inject', cb);
+});
