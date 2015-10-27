@@ -8,16 +8,23 @@ var runSequence = require('run-sequence');
 var config = require('../_config.json');
 
 gulp.task('jade', function(){
-  return gulp.src([config.path.src + '/views/**/*.jade', '!' + config.path.src + '/views/**/_*.jade'])
-    .pipe($.jade({ pretty: true }))
-    .pipe(gulp.dest(config.path.dist));
+
+  var jadeDir = config.path.src + '/jade';
+  var opt = {
+    pretty: true,
+    basedir: jadeDir
+  }
+  return gulp.src([jadeDir + '/views/**/*.jade', '!' + jadeDir + '/views/**/_*.jade'])
+    .pipe($.plumber())
+    .pipe($.jade(opt))
+    .pipe(gulp.dest(config.path.src));
 });
 
 gulp.task('inject', function(){
 
-  return gulp.src(config.path.dist + '/**/*.html')
+  return gulp.src(config.path.src + '/**/*.html')
     .pipe($.inject(gulp.src(mainBowerFiles(), {read: false}), {relative: true}))
-    .pipe(gulp.dest(config.path.dist));
+    .pipe(gulp.dest(config.path.src));
 });
 
 gulp.task('jade-inject', function(cb){

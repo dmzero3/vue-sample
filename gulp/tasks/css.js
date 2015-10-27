@@ -7,7 +7,8 @@ var runSequence = require('run-sequence');
 var config = require('../_config.json');
 
 gulp.task('stylus', function(){
-  return gulp.src(config.path.src + '/stylus/**/*.styl')
+  return gulp.src(config.path.src + '/css/stylus/**/*.styl')
+    .pipe($.plumber())
     .pipe($.stylus())
-    .pipe(gulp.dest(config.path.dist + '/styles'));
+    .pipe(gulp.dest(config.path.src + '/css'));
 });
