@@ -4,11 +4,11 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({pattern: ['gulp-*', 'gulp.*']});
 var runSequence = require('run-sequence');
 
-var config = require('../_config.json');
+var config = require('../config');
 
 gulp.task('stylus', function(){
-  return gulp.src(config.path.src + '/css/stylus/**/*.styl')
+  return gulp.src(config.src + '/css/stylus/**/*.styl')
     .pipe($.plumber())
     .pipe($.stylus())
-    .pipe(gulp.dest(config.path.src + '/css'));
+    .pipe(gulp.dest(config.src + '/css'));
 });

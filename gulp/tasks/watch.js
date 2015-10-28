@@ -4,12 +4,14 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({pattern: ['gulp-*', 'gulp.*']});
 var browserSync = require('browser-sync');
 
-var config = require('../_config.json');
+var config = require('../config');
 
 gulp.task('watch', ['server'], function(){
-  var jade = [config.path.src + '/views/**/*.jade', '!' + config.path.src + '/views/**/_*.jade'];
-  var stylus = [config.path.src + '/stylus/**/*.styl'];
+  var jadeFiles = [config.src + '/jade/views/**/*.jade', '!' + config.src + '/jade/views/**/_*.jade'];
+  var stylusFiles = [config.src + '/stylus/**/*.styl'];
+  var jsFiles = [config.src + '/js/**/*.js'];
 
-  gulp.watch(jade, ['jade-inject', browserSync.reload]);
-  gulp.watch(stylus, ['stylus', browserSync.reload]);
+  gulp.watch(jadeFiles, ['jade-inject', browserSync.reload]);
+  gulp.watch(stylusFiles, ['stylus', browserSync.reload]);
+  gulp.watch(jsFiles, ['webpack', browserSync.reload]);
 });

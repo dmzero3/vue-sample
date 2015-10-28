@@ -5,7 +5,7 @@ var $ = require('gulp-load-plugins')({pattern: ['gulp-*', 'gulp.*']});
 var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
-var config = require('../_config.json');
+var config = require('../config');
 
 
 gulp.task('server', function(){
@@ -14,11 +14,11 @@ gulp.task('server', function(){
 
       browserSync({
         server: {
-          baseDir: config.path.src
+          baseDir: config.src
         }
       });
     }
   };
-  runSequence('stylus', 'jade-inject', launch());
+  runSequence('webpack', 'stylus', 'jade-inject', launch());
 
 });
