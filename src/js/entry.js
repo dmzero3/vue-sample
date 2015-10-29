@@ -6,6 +6,7 @@
 
   var hello = new Hello();
 
+
   hello.alert();
 
 })();

@@ -2,7 +2,7 @@ function Hello(){
 
   'use strict';
   this.alert = function(){
-    alert('hello');
+    console.log('hello');
   }
 
 }
