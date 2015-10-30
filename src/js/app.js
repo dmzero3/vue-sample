@@ -42,38 +42,15 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	(function(){
 	
 	  'use strict';
 	
-	  var Hello = __webpack_require__(1);
-	
-	  var hello = new Hello();
-	
-	
-	  hello.alert();
+	  
 	
 	})();
-
-
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
-
-	function Hello(){
-	
-	  'use strict';
-	  this.alert = function(){
-	    console.log('hello');
-	  }
-	
-	}
-	
-	
-	
-	module.exports = Hello;
 
 
 /***/ }

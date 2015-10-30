@@ -5,11 +5,35 @@
     <meta charset="utf-8">
     <!--inject:css-->
     <!--endinject-->
-    <style src="/css/app.css"></style>
+    <link href="/css/app.css" rel="stylesheet">
   </head>
   <body>
-    <div class="wrapper">
-      <h1>トップページ</h1>
+    <div class="l-wrapper">
+      <h1 class="c-headline">TODOサンプル</h1>
+      <section class="m-section m-section--border">
+        <div class="m-register">
+          <div class="m-register__heading">
+            <h2 class="c-heading">新規登録</h2>
+          </div>
+          <div class="m-register__form">
+            <div class="m-register__input">
+              <input type="text" class="c-input">
+            </div>
+            <div class="m-register__btn"><a class="c-btn c-btn-radius c-btn-submit">登録</a></div>
+          </div>
+        </div>
+      </section>
+      <section class="m-section">
+        <h2 class="c-heading">TODOリスト</h2>
+        <ul class="m-list">
+          <li class="m-list__item">
+            <div class="m-item">
+              <p class="m-item__title">TODOタイトル</p>
+              <p class="m-item__btn"><a class="c-btn c-btn-radius c-btn-delete">削除</a></p>
+            </div>
+          </li>
+        </ul>
+      </section>
     </div>
     <!-- inject:js-->
     <script src="bower_components/jquery/dist/jquery.js"></script>

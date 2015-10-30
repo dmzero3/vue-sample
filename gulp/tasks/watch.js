@@ -8,7 +8,7 @@ var config = require('../config');
 
 gulp.task('watch', ['server'], function(){
   var jadeFiles = [config.src + '/jade/views/**/*.jade', '!' + config.src + '/jade/views/**/_*.jade'];
-  var stylusFiles = [config.src + '/stylus/**/*.styl'];
+  var stylusFiles = [config.src + '/css/stylus/**/*.styl'];
   var jsFiles = [config.src + '/js/**/*.js'];
 
   gulp.watch(jadeFiles, ['jade-inject', browserSync.reload]);
