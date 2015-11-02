@@ -9,7 +9,7 @@ var config = require('../config');
 gulp.task('watch', ['server'], function(){
   var jadeFiles = [config.src + '/jade/views/**/*.jade', '!' + config.src + '/jade/views/**/_*.jade'];
   var stylusFiles = [config.src + '/css/stylus/**/*.styl'];
-  var jsFiles = [config.src + '/js/**/*.js'];
+  var jsFiles = [config.src + '/js/**/*.js', '!' + config.src + '/js/app.js'];
 
   gulp.watch(jadeFiles, ['jade-inject', browserSync.reload]);
   gulp.watch(stylusFiles, ['stylus', browserSync.reload]);
