@@ -1,21 +1,15 @@
 extends /base/_layout.base.jade
 
 block main
-  h1.c-headline TODOサンプル
-  section.m-section.m-section--border
-    div.m-register
-      div.m-register__heading
-        h2.c-heading 新規登録
-      div.m-register__form
-        div.m-register__input
-          input.c-input(type="text")
-        div.m-register__btn
-          a.c-btn.c-btn-radius.c-btn-submit(v-on="click: alert") 登録
-  section.m-section
-    h2.c-heading TODOリスト
-    ul.m-list
-      li.m-list__item
-        div.m-item
-          p.m-item__title TODOタイトル
-          p.m-item__btn
-            a.c-btn.c-btn-radius.c-btn-delete 削除
+  h1.c-headline イベント一覧
+  div#vm-atnd
+    section.m-section.m-section--border
+      
+      a.c-btn.c-btn-radius.c-btn-submit(href="#", @click="renderAtnd") ATND
+            
+    section.m-section
+      //- h2.c-heading TODOリスト
+      ul.m-list
+        li.m-list__item(v-for="item in items")
+          div.m-item
+            p.m-item__title {{ item.event.title }}

@@ -9,3 +9,4 @@ bower_components
 test/bower_components
 *.map
 src/js/app.js
+src/css/*.css
