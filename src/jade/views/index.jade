@@ -3,6 +3,16 @@ extends /base/_layout.base.jade
 block main
   h1.c-headline イベント一覧
   div#vm-atnd
+  
+    section.m-section.m-section--border
+      ul.c-tabs
+        li.c-tab
+          a.c-tab__target ATND
+        li.c-tab
+          a.c-tab__target conpass
+        li.c-tab
+          a.c-tab__target doorkeeper
+          
     section.m-section.m-section--border
       
       a.c-btn.c-btn-radius.c-btn-submit(href="#", @click="renderAtnd") ATND
